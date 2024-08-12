@@ -1,0 +1,22 @@
+Projeto 03
+Jogo Gamificado
+
+input.onPinPressed(TouchPin.P0, function () {
+    control.reset()
+})
+let Botão_Não_Precionado = true
+basic.forever(function () {
+    while (Botão_Não_Precionado) {
+        if (input.pinIsPressed(TouchPin.P1)) {
+            basic.showString("A")
+            music.ringTone(587)
+            music.setVolume(200)
+            Botão_Não_Precionado = false
+        } else if (input.pinIsPressed(TouchPin.P2)) {
+            music.ringTone(698)
+            music.setVolume(200)
+            Botão_Não_Precionado = false
+            basic.showString("B")
+        }
+    }
+})
